@@ -12,7 +12,6 @@ def zero_module(module):
         p.detach().zero_()
     return module
 
-
 class GroupNorm32(nn.GroupNorm):
     def forward(self, x):
         return super().forward(x.float()).type(x.dtype)
